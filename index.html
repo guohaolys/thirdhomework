@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>2017年网页设计与制作最后一次作业</title>
+<head>
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+
+}
+
+#section {
+    width:100%;
+    float:left;
+ 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+
+}
+h3{text-align:left;}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>2017年网页设计与制作最后一次作业（作业列表）</h1>
+<h2>此次作业主要考察大家对HTML+CSS+JavaScript+php+mysql的综合应用，鼓励大家在此次作业中使用各种Js开源库</h2>
+<h3>注意1：因为此次作业是最后一次大作业，所以要求大家对自己编写的程序完全掌握，并做ppt进行汇报（第8周实验课上进行）</h3>
+<h3>注意2：此次作业，大家分三组，自由组队，由项目组长牵头进行内容设计、协作通过github开发（保留开发过程中的commits，以方便我了解各个成员的贡献情况）、完成并以pull request形式提交作业</h3>
+<h3>注意3：每组提交代码包括：本组成员在主页的信息行，本组的站点内容文件夹，文件夹以组别命名</h3>
+<h3>注意4：本次作业提交期限为，第8周上实验课（本年4月21日）之前，课堂上按组进行ppt汇报（汇报人，组内自己协定），汇报内容需要包含（设计、开发、每人的任务、经验与收获总结等）</h3>
+<h3>注意5：修改index.html时，主要和以前一样，保证添加个人信息后，前后两行的行号保持不变，方便我合并作业</h3>
+</div>
+
+<div id="section">
+<table width="100%">
+<tr>
+<th>姓名</th>
+<th>班级</th>
+<th>学号</th>
+<th>组别</th>
+<th>项目链接</th>
+</tr>
+<tr>
+<td align="center">guohao</td>
+<td align="center">xx</td>
+<td align="center">xx</td>
+<td align="center">xx</td>
+<td align="center"><a href="#">每人链接到自己组主页即可</a></td>
+</tr>
+<!--为了合并方便，请同学们在自己名字下面，每人添加该表的一行，格式类似上面的一行例子-->
+<!--请注意，大家添加自己内容之后确保不要改变下一个同学和自己的注释所在的行数-->
+<!--1	 1308160218	 祝玉婷	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学(理科试验班)	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--2	 1408080104	 冀际安	 男	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--3	 1408080105	 高祺开	 男	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--4	 1408080112	 邢畅	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--5	 1408080115	 张缘	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--6	 1408080116	 刘树文	 男	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--7	 1408080119	 刘昱甫	 男	 地理信息科学	 信息与电气工程学院	 地理信息科学(理科试验班)	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--8	 1408080123	 袁钰	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--9	 1408080124	 杨菡	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--10	 1408080126	 王晓蓉	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学	 	 正常-->
+
+
+
+
+
+
+
+
+
+<!--11	 1408160202	 姜澍辰	 女	 地理信息科学	 信息与电气工程学院	 地理信息科学(理科试验班)	 	 正常-->
+
+
+
+
+
+
+
+
+
+
+<!--结束-->
+</table>
+</div>
+
+<div id="footer">
+Copyright reserved
+</div>
+<script src="build/three.js"></script>
+		<script>
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight/3 );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var render = function () {
+				requestAnimationFrame( render );
+
+				cube.rotation.x += 0.1;
+				cube.rotation.y += 0.1;
+
+				renderer.render(scene, camera);
+			};
+
+			render();
+		</script>
+</body>
+</html>
