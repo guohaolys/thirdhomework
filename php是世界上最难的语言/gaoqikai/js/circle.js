@@ -62,3 +62,11 @@ Circle.prototype.getCloseCircleIndex = function (dir) {
     }
     return res;
 }
+
+Circle.isBoundary = function (row,col) {
+    var  r = false;
+    if(row == 0 || col == 0 || row == 8 || col == 8){
+        r = true;
+    }
+    return r;
+}

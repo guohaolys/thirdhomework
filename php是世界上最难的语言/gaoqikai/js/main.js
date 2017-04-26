@@ -10,6 +10,8 @@ var grid = new Array(9);
 var CircleDiameter = 45;
 var GridOffsetX = 50;
 var GridOffsetY = 280;
+var gameState;
+var step;
 var DIR = {
     LEFT:1,
     UP_LEFT:2,
@@ -17,6 +19,11 @@ var DIR = {
     RIGHT: 4,
     DOWN_RIGHT:5,
     DOWN_LEFT:6
+}
+var STATE = {
+    START:0,
+    PLAY :1,
+    END:2
 }
 window.onload = function () {
     stage = new createjs.Stage("myCanvas");
@@ -27,8 +34,7 @@ window.onload = function () {
 
     canvas = document.getElementById("myCanvas");
     canvas.addEventListener("mousedown",handleMouseDown);
-    creatMap();
-    creatCat();
+    startGame();
 
 
 
@@ -42,20 +48,28 @@ function handleMouseDown(event) {
     var origX = event.pageX - canvas.offsetLeft - GridOffsetX + CircleDiameter / 2;
     var origY = event.pageY - canvas.offsetTop - GridOffsetY + CircleDiameter / 2;
     //console.log("x,y",origX,origY,canvas.offsetLeft,canvas.offsetTop);
-    if(origY > 0 && origY < CircleDiameter * 9){
-        var row = parseInt(origY/CircleDiameter);
-        var offset = row % 2 ? CircleDiameter / 2 : 0;
-        if(origX > 0 && origX < CircleDiameter * 9 + offset){
-            var col = parseInt((origX - offset) / CircleDiameter);
-            //console.log("circle",row,col);
-            var circle = grid[row][col];
-            if(circle.type == Circle.TYPE_UNSELECTED){
+    if(gameState == STATE.START){
+        enterGame();
+    }else if(gameState == STATE.PLAY){
+        if(origY > 0 && origY < CircleDiameter * 9){
+            var row = parseInt(origY/CircleDiameter);
+            var offset = row % 2 ? CircleDiameter / 2 : 0;
+            if(origX > 0 && origX < CircleDiameter * 9 + offset){
+                var col = parseInt((origX - offset) / CircleDiameter);
+                //console.log("circle",row,col);
+                var circle = grid[row][col];
+                if(circle.type == Circle.TYPE_UNSELECTED){
+                    step++;
                     stage.removeChild(circle);
                     addCircle(row,col,Circle.TYPE_SELECTED);
                     catMove();
+                }
             }
         }
+    }else if(gameState == STATE.END){
+        resetGame();
     }
+
 
 }
 
@@ -73,17 +87,22 @@ function catMove() {
     }
     if(walkableArr.length == 0){
         //游戏结束 win
+        gameOver(true);
     }else {
         var randomIndex = parseInt(Math.random() * walkableArr.length);
         var finalCircle = walkableArr[randomIndex];
         cat.move(finalCircle.row,finalCircle.col,finalCircle.x,finalCircle.y);
+        if(Circle.isBoundary(finalCircle.row,finalCircle.col)){
+            //游戏结束Lose
+            gameOver(false);
+        }
     }
 }
 
 
 function addCircle(row,col,type) {
     var bitmap = new Circle(type,row,col);
-    stage.addChild(bitmap);
+    stage.addChildAt(bitmap,0);
     var offset = row % 2 ? CircleDiameter / 2 :0;
 
     bitmap.regX = CircleDiameter /2;
@@ -123,4 +142,52 @@ function creatCat() {
     cat.setGridPos(4,4);
     stage.addChild(cat);
 
+}
+/////////////////////流程控制///////////////////
+function startGame() {
+    gameState = STATE.START;
+
+    //开始界面
+    var image = new createjs.Bitmap("res/btn_start.png");
+    stage.addChild(image);
+    image.name = "start";
+    image.x = 50;
+    image.y = 200;
+}
+function enterGame() {
+    gameState = STATE.PLAY;
+    stage.removeChild(stage.getChildByName("start"));
+    step = 0;
+    creatMap();
+    creatCat();
+
+}
+function gameOver(win) {
+    gameState = STATE.END;
+    var pic;
+    if(win){
+        pic = "res/victory.png";
+    }else {
+        pic = "res/failed.png";
+    }
+    //结束图片
+    var image = new createjs.Bitmap(pic);
+    image.x = 30;
+    image.y = 200;
+    stage.addChild(image);
+    //文字提示
+    var text = new createjs.Text("你用了" + step + "步","30px Arial","#000000");
+    text.x = 200;
+    text.y = 350;
+    stage.addChild(text);
+    //再来一次
+    var replayImage = new createjs.Bitmap("res/replay.png");
+    replayImage.x = 150;
+    replayImage.y = 400;
+    stage.addChild(replayImage);
+}
+function resetGame() {
+    //清空场景
+    stage.removeAllChildren();
+    enterGame();
 }
