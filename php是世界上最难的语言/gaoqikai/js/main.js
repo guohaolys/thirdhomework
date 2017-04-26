@@ -5,11 +5,19 @@
 
 var stage;
 var canvas;
+var cat;
 var grid = new Array(9);
 var CircleDiameter = 45;
 var GridOffsetX = 50;
 var GridOffsetY = 280;
-
+var DIR = {
+    LEFT:1,
+    UP_LEFT:2,
+    UP_RIGHT:3,
+    RIGHT: 4,
+    DOWN_RIGHT:5,
+    DOWN_LEFT:6
+}
 window.onload = function () {
     stage = new createjs.Stage("myCanvas");
 
@@ -39,11 +47,57 @@ function handleMouseDown(event) {
         var offset = row % 2 ? CircleDiameter / 2 : 0;
         if(origX > 0 && origX < CircleDiameter * 9 + offset){
             var col = parseInt((origX - offset) / CircleDiameter);
-            console.log("circle",row,col);
+            //console.log("circle",row,col);
+            var circle = grid[row][col];
+            if(circle.type == Circle.TYPE_UNSELECTED){
+                    stage.removeChild(circle);
+                    addCircle(row,col,Circle.TYPE_SELECTED);
+                    catMove();
+            }
         }
     }
 
 }
+
+function catMove() {
+    var catCircle = grid[cat.row][cat.col];
+    var walkableArr = [];
+    for(var i = 1;i <= 6;++i){
+        var p = catCircle.getCloseCircleIndex(i);
+        if(p){
+            var closeCicle = grid[p[0]][p[1]];
+            if(closeCicle.type == Circle.TYPE_UNSELECTED){
+                walkableArr.push(closeCicle);
+            }
+        }
+    }
+    if(walkableArr.length == 0){
+        //游戏结束 win
+    }else {
+        var randomIndex = parseInt(Math.random() * walkableArr.length);
+        var finalCircle = walkableArr[randomIndex];
+        cat.move(finalCircle.row,finalCircle.col,finalCircle.x,finalCircle.y);
+    }
+}
+
+
+function addCircle(row,col,type) {
+    var bitmap = new Circle(type,row,col);
+    stage.addChild(bitmap);
+    var offset = row % 2 ? CircleDiameter / 2 :0;
+
+    bitmap.regX = CircleDiameter /2;
+    bitmap.regY = CircleDiameter /2;
+
+    //列
+    bitmap.x = GridOffsetX + CircleDiameter * col + offset;
+    //行
+    bitmap.y = GridOffsetY + CircleDiameter * row;
+
+    grid[row][col] = bitmap;
+}
+
+
 
 
 function creatMap() {
@@ -52,19 +106,10 @@ function creatMap() {
         for(var j = 0;j < 9;j++){
             //var bitmap = new createjs.Bitmap("res/pot1.png");
             var ranType = Math.random() < 0.3 ? Circle.TYPE_SELECTED : Circle.TYPE_UNSELECTED;
-            var bitmap = new Circle(ranType,i,j);
-            stage.addChild(bitmap);
-            var offset = i % 2 ? CircleDiameter / 2 :0;
-
-            bitmap.regX = CircleDiameter /2;
-            bitmap.regY = CircleDiameter /2;
-
-            //列
-            bitmap.x = GridOffsetX + CircleDiameter * j + offset;
-            //行
-            bitmap.y = GridOffsetY + CircleDiameter * i;
-
-            grid[i][j] = bitmap;
+            if(i == 4 && j == 4){
+                ranType = Circle.TYPE_UNSELECTED;
+            }
+            addCircle(i,j,ranType);
 
         }
     }
@@ -72,17 +117,10 @@ function creatMap() {
 }
 
 function creatCat() {
-    var data = {
-        framerate:15,
-        images:["res/stay.png"],
-        frames:{width:61,height:93,regX:30,regY:93},
-        animations:{run:[0,15]}
-    }
-
-    var spriteSheet = new createjs.SpriteSheet(data);
-    var cat = new createjs.Sprite(spriteSheet,"run");
+    cat = new Cat();
     cat.x = grid[4][4].x;
     cat.y = grid[4][4].y;
+    cat.setGridPos(4,4);
     stage.addChild(cat);
 
 }
