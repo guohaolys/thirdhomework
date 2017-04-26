@@ -1,5 +1,3 @@
-<html>
-<body>
 
 <?php  
     if(isset($_POST["submit"]) && $_POST["submit"] == "登录")  
@@ -22,7 +20,8 @@
             {  
 				//$row = mysql_fetch_array($result);  
                 //echo $row[0]; 
-				//链接到高祺开的游戏页面
+				//链接到高祺开的游戏页面,传userName给cookie，
+				setcookie('username', $user, time()+3600,'/');
                 $url = "../gaoqikai/index.html"; 
 				Header("Location:$url"); 
             }  
@@ -38,6 +37,3 @@
     }  
   
 ?>  
-
-</body>
-</html>
