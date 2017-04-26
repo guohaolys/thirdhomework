@@ -7,6 +7,9 @@ var stage;
 var canvas;
 var grid = new Array(9);
 var CircleDiameter = 45;
+var GridOffsetX = 50;
+var GridOffsetY = 280;
+
 window.onload = function () {
     stage = new createjs.Stage("myCanvas");
 
@@ -28,9 +31,18 @@ function  handleTick(event) {
 }
 
 function handleMouseDown(event) {
-    var origX = event.pageX - canvas.offsetLeft;
-    var origY = event.pageY - canvas.offsetTop;
+    var origX = event.pageX - canvas.offsetLeft - GridOffsetX + CircleDiameter / 2;
+    var origY = event.pageY - canvas.offsetTop - GridOffsetY + CircleDiameter / 2;
     //console.log("x,y",origX,origY,canvas.offsetLeft,canvas.offsetTop);
+    if(origY > 0 && origY < CircleDiameter * 9){
+        var row = parseInt(origY/CircleDiameter);
+        var offset = row % 2 ? CircleDiameter / 2 : 0;
+        if(origX > 0 && origX < CircleDiameter * 9 + offset){
+            var col = parseInt((origX - offset) / CircleDiameter);
+            console.log("circle",row,col);
+        }
+    }
+
 }
 
 
@@ -48,9 +60,9 @@ function creatMap() {
             bitmap.regY = CircleDiameter /2;
 
             //列
-            bitmap.x = 50 + CircleDiameter * j + offset;
+            bitmap.x = GridOffsetX + CircleDiameter * j + offset;
             //行
-            bitmap.y = 280 + CircleDiameter * i;
+            bitmap.y = GridOffsetY + CircleDiameter * i;
 
             grid[i][j] = bitmap;
 
