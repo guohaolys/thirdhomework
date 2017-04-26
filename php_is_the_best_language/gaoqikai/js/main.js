@@ -145,6 +145,7 @@ function creatCat() {
 }
 /////////////////////流程控制///////////////////
 function startGame() {
+    //saveScore(99);
     gameState = STATE.START;
 
     //开始界面
@@ -168,6 +169,8 @@ function gameOver(win) {
     if(win){
         pic = "res/victory.png";
 		//使用ajax调用php
+        saveScore(step);
+
     }else {
         pic = "res/failed.png";
     }
@@ -191,17 +194,4 @@ function resetGame() {
     //清空场景
     stage.removeAllChildren();
     enterGame();
-}
-function saveScore(){
-	xmlHttp=GetXmlHttpObject();
-	if (xmlHttp==null){
-	  alert ("Browser does not support HTTP Request");
-	  return;
-	} 
-	var url="php/savescore.php"
-	url=url+"?q="+str
-	url=url+"&sid="+Math.random()
-	xmlHttp.onreadystatechange=stateChanged 
-	xmlHttp.open("GET",url,true)
-	xmlHttp.send(null)
 }
