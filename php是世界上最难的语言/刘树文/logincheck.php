@@ -23,7 +23,8 @@
 				//$row = mysql_fetch_array($result);  
                 //echo $row[0]; 
 				//链接到高祺开的游戏页面
-                 
+                $url = "../gaoqikai/index.html"; 
+				Header("Location:$url"); 
             }  
             else  
             {  
