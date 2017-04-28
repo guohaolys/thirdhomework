@@ -37,8 +37,6 @@ window.onload = function () {
     canvas.addEventListener("mousedown",handleMouseDown);
     startGame();
 
-
-
 }
 function  handleTick(event) {
     //console.log("tick");
