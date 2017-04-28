@@ -58,7 +58,7 @@ function handleMouseDown(event) {
                 var col = parseInt((origX - offset) / CircleDiameter);
                 //console.log("circle",row,col);
                 var circle = grid[row][col];
-                if(circle.type == Circle.TYPE_UNSELECTED){
+                if(circle.type == Circle.TYPE_UNSELECTED && !(cat.row == row && cat.col == col) ){
                     isInCircle = true;
 
                     step++;
