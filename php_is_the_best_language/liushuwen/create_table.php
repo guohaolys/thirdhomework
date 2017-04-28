@@ -18,6 +18,10 @@ if (!mysql_query($sql,$con))
   {
  die('Error: ' . mysql_error());
   }
+  else
+  {
+	  echo"成功创建";
+  }
 
 $sql1="INSERT INTO user (username, password) VALUES ('1', '1')";
 if (!mysql_query($sql1,$con))
@@ -25,12 +29,7 @@ if (!mysql_query($sql1,$con))
   die('Error: ' . mysql_error());
   }
 
-$result = mysql_query("SELECT * FROM user");
 
-while($row = mysql_fetch_array($result))
-  {
-  echo $row['username'] . " " . $row['password'];
-  echo "<br />";
-  }
+
 mysql_close($con);
 ?>
