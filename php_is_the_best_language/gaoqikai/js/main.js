@@ -2,7 +2,7 @@
  * Created by ChuckGao on 2017/4/26.
  */
 
-
+var palyGround;
 var stage;
 var canvas;
 var cat;
@@ -32,6 +32,7 @@ window.onload = function () {
     createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
     createjs.Ticker.addEventListener("tick",handleTick);
 
+    palyGround = document.getElementById("playGround");
     canvas = document.getElementById("myCanvas");
     canvas.addEventListener("mousedown",handleMouseDown);
     startGame();
@@ -45,10 +46,10 @@ function  handleTick(event) {
 }
 
 function handleMouseDown(event) {
-    var origX = event.pageX - canvas.offsetLeft - GridOffsetX + CircleDiameter / 2;
-    var origY = event.pageY - canvas.offsetTop - GridOffsetY + CircleDiameter / 2;
+    var origX = event.pageX - palyGround.offsetLeft - GridOffsetX + CircleDiameter / 2;
+    var origY = event.pageY - palyGround.offsetTop - GridOffsetY + CircleDiameter / 2;
     var isInCircle = false;
-    //console.log("x,y",origX,origY,canvas.offsetLeft,canvas.offsetTop);
+    console.log("x,y",origX,origY,palyGround.offsetLeft,palyGround.offsetTop);
     if(gameState == STATE.START){
         enterGame();
     }else if(gameState == STATE.PLAY){
