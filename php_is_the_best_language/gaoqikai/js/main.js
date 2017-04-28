@@ -47,6 +47,7 @@ function  handleTick(event) {
 function handleMouseDown(event) {
     var origX = event.pageX - canvas.offsetLeft - GridOffsetX + CircleDiameter / 2;
     var origY = event.pageY - canvas.offsetTop - GridOffsetY + CircleDiameter / 2;
+    var isInCircle = false;
     //console.log("x,y",origX,origY,canvas.offsetLeft,canvas.offsetTop);
     if(gameState == STATE.START){
         enterGame();
@@ -59,6 +60,8 @@ function handleMouseDown(event) {
                 //console.log("circle",row,col);
                 var circle = grid[row][col];
                 if(circle.type == Circle.TYPE_UNSELECTED){
+                    isInCircle = true;
+
                     step++;
                     stage.removeChild(circle);
                     addCircle(row,col,Circle.TYPE_SELECTED);
@@ -69,6 +72,13 @@ function handleMouseDown(event) {
     }else if(gameState == STATE.END){
         resetGame();
     }
+    if(isInCircle){
+        playSound("step");
+    }
+    else {
+        playSound("click");
+    }
+
 
 
 }
@@ -154,6 +164,9 @@ function startGame() {
     image.name = "start";
     image.x = 50;
     image.y = 200;
+
+    //开始音效
+    loadSoundFile(handleSoundLoad);
 }
 function enterGame() {
     gameState = STATE.PLAY;
@@ -170,9 +183,11 @@ function gameOver(win) {
         pic = "res/victory.png";
 		//使用ajax调用php
         saveScore(step);
+        playSound("victory");
 
     }else {
         pic = "res/failed.png";
+        playSound("fail");
     }
     //结束图片
     var image = new createjs.Bitmap(pic);
