@@ -200,9 +200,14 @@ function gameOver(win) {
     stage.addChild(text);
     //再来一次
     var replayImage = new createjs.Bitmap("res/replay.png");
-    replayImage.x = 150;
+    replayImage.x = 260;
     replayImage.y = 400;
     stage.addChild(replayImage);
+    //通知好友
+    var shareBTNImage = new createjs.Bitmap("res/shareBTN.png");
+    shareBTNImage.x = 50;
+    shareBTNImage.y = 400;
+    stage.addChild(shareBTNImage);
 }
 function resetGame() {
     //清空场景
