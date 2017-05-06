@@ -10,6 +10,10 @@ var grid = new Array(9);
 var CircleDiameter = 45;
 var GridOffsetX = 50;
 var GridOffsetY = 280;
+var buttonHeight = 103;
+var buttonWidth = 200;
+var shareButtonHint = new createjs.Point(50,400);
+var replayButtonHint = new createjs.Point(260,400);
 var gameState;
 var step;
 var DIR = {
@@ -47,7 +51,7 @@ function handleMouseDown(event) {
     var origX = event.pageX - palyGround.offsetLeft - GridOffsetX + CircleDiameter / 2;
     var origY = event.pageY - palyGround.offsetTop - GridOffsetY + CircleDiameter / 2;
     var isInCircle = false;
-    console.log("x,y",origX,origY,palyGround.offsetLeft,palyGround.offsetTop);
+    //console.log("x,y",origX,origY,palyGround.offsetLeft,palyGround.offsetTop);
     if(gameState == STATE.START){
         enterGame();
     }else if(gameState == STATE.PLAY){
@@ -69,7 +73,21 @@ function handleMouseDown(event) {
             }
         }
     }else if(gameState == STATE.END){
-        resetGame();
+		var mX = event.pageX - palyGround.offsetLeft;
+		var mY = event.pageY - palyGround.offsetTop;
+		if(mX > shareButtonHint.x && mX < shareButtonHint.x + buttonWidth){
+		    if(mY >shareButtonHint.y && mY < shareButtonHint.y + buttonHeight){
+		        //分享按钮
+                self.location = "../zhuyuting/js/map.html";
+                //console.debug("share");
+            }
+        }
+        if(mX > replayButtonHint.x && mX < replayButtonHint.x + buttonWidth){
+            if(mY >replayButtonHint.y && mY < replayButtonHint.y + buttonHeight){
+                //重玩按钮
+                resetGame();
+            }
+        }
     }
     if(isInCircle){
         playSound("step");
@@ -200,13 +218,13 @@ function gameOver(win) {
     stage.addChild(text);
     //再来一次
     var replayImage = new createjs.Bitmap("res/replay.png");
-    replayImage.x = 260;
-    replayImage.y = 400;
+    replayImage.x = replayButtonHint.x;
+    replayImage.y = replayButtonHint.y;
     stage.addChild(replayImage);
     //通知好友
     var shareBTNImage = new createjs.Bitmap("res/shareBTN.png");
-    shareBTNImage.x = 50;
-    shareBTNImage.y = 400;
+    shareBTNImage.x = shareButtonHint.x;
+    shareBTNImage.y = shareButtonHint.y;
     stage.addChild(shareBTNImage);
 }
 function resetGame() {
