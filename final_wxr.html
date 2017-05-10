@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstarp-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstarp-css -->
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--// css -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--/fonts-->
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<style>
+.size{
+weight:426px;
+width:319px;
+}
+
+.size_01{
+weight:100%;
+width:100%;
+}
+
+
+#div1 {
+background-color: white;
+width:100%;
+height:500px;
+overflow: hidden;
+	}		    		  			
+</style>
+</head>
+
+
+<body>
+	
+	<div>
+		<!-- container -->
+		<div class="container">
+			<div class="header">
+				<div class="header-info-right">
+					<div class="header cbp-spmenu-push">
+						<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+								<a class="scroll" href="index.html">HOME</a>
+								<a class="scroll" href="#about">ABOUT</a>
+								<a class="scroll" href="#hello">BOOKS</a>
+						</nav>
+						<!--script-nav -->	
+						<script>
+							$("span.menu").click(function(){
+								$("ul.navigatoin").slideToggle("300" , function(){
+								});
+							});
+						</script>
+						<script type="text/javascript">
+									jQuery(document).ready(function($) {
+										$(".scroll").click(function(event){		
+											event.preventDefault();
+											$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+										});
+									});
+						</script>
+						<div class="clearfix"> </div>
+							<!-- /script-nav -->
+										<div class="main">
+											<section class="buttonset">
+												<button id="showRightPush"><img src="images/menu.png" /></button>
+											</section>
+										</div>
+										<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+										<script src="js/classie.js"></script>
+										<script>
+											var	menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+												showRightPush = document.getElementById( 'showRightPush' ),
+												body = document.body;
+								
+											showRightPush.onclick = function() {
+												classie.toggle( this, 'active' );
+												classie.toggle( body, 'cbp-spmenu-push-toleft' );
+												classie.toggle( menuRight, 'cbp-spmenu-open' );
+												disableOther( 'showRightPush' );
+											};
+										</script>
+					</div>
+				</div>  	
+				<div id="div1" ></div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	<!-- //container -->	
+	</div>	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	<!--//banner-->
+	<!--about-starts-->
+	<div class="about" id="about">
+		<div class="container">
+			<div class="about-mian">
+				<img src="images/abt-1.png" alt=""/>
+				<h3>三毛  &  echo</h3>
+				 <p>三毛，原名陈懋平,英文名叫ECHO，三毛本是笔名，从三毛的《闹学记》序中只提及“三毛”二字中暗藏一个易经的卦。但又是什么玄机，就不得而知了。但三毛本人又曾说过：起初起此名，是因为喜欢张乐平先生的三毛流浪记；另有一个原因就是说自己写的东西很一般，只值三毛钱</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	<!--about-ends-->
+	<!--services-starts-->
+	<div class="services">
+		<div class="container">
+			<div class="services-main">
+				<div class="col-md-4 service-left">
+					<span class="service-one"> </span>
+					<h3>《送你一匹马》</h3>
+					<p>读书多了，容颜自然改变，许多时候，自己可能以为许多看过的书籍都成了过眼云烟，不复记忆，其实他们仍是潜在的。在气质里，在谈吐上，在胸襟的无涯，当然也可能显露在生活和文字里</p>
+				</div>
+				<div class="col-md-4 service-left">
+					<span class="service-two"> </span>
+					<h3>《亲爱的三毛》</h3>
+					<p>事实上，我十分安然于一本好书，一个长夜和一杯热茶的宁静生活。对于人生，这已是很大的福分，因为我们没有生活在战乱和极权统治的国家里，这份自由是我十分感激而珍爱的</p>
+				</div>
+				<div class="col-md-4 service-left">
+					<span class="service-tre"> </span>
+					<h3>《亲爱的三毛》</h3>
+					<p>生命的意义和最终目的到底是什么，目前我的答案却只有一个，很简单的一个，那便是”寻找真正的自由”然后享受生命</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	<!--services-ends-->
+	<!--articles-starts-->
+	<div class="articles">
+		<div class="container">	
+			<div class="articles-top">
+				<h3>Photos</h3>
+			</div>			
+			<div class="articles-bottom">
+				<div  id="top" class="callbacks_container">
+			      	<ul class="rslides" id="slider4">
+					
+					<!----前3张--->
+			        <li>
+						<div class="articles-btm">
+
+							<div class="col-md-4 articles-left active">			
+								 <div style="weight:426px width:319px">
+										<img src="images/ecoh01.jpg"  style="weight:100%;width:100%" alt=""/>
+										<span></span>
+									</div>	
+									</div>	
+																			
+							<div class="col-md-4 articles-left">						
+						       <div class="size" >
+								<img src="images/ecoh02.jpg" class="size_01" alt=""/>	
+							<span></span>	
+								</div>
+							</div>
+																						
+							<div class="col-md-4 articles-left">
+							 <div class="size">
+								<img src="images/ecoh04.jpg" class="size_01"  alt=""/>
+							<span></span>	
+								</div>
+							</div>
+							
+							
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					
+				<!---后3张--->
+					<li>
+						<div class="articles-btm">
+							<div class="col-md-4 articles-left active">									
+						       <div style="weight:426px width:319px">
+							   <img src="images/ecoh11.jpg"  style="weight:100%;width:100%" alt=""/>
+									<span></span>	
+								</div>
+							</div>
+							
+							
+							<div class="col-md-4 articles-left">
+									  <div style="weight:426px width:319px">
+									<img src="images/ecoh09.jpg"  style="weight:100%;width:100%" alt=""/>																			
+								    <span></span>	
+								</div>
+							</div>
+													
+							<div class="col-md-4 articles-left">
+							 <div class="size">
+							<img src="images/ecoh10.jpg" class="size_01"  alt=""/>								
+									<span></span>	
+								</div>
+							</div>
+							
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					
+			      </ul>
+			    </div>
+			 <div class="clearfix"> </div>	
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<!--articles-ends-->
+	<!--Slider-Starts-Here-->
+				<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>		  
+	<!--End-slider-script-->
+	<!--clients-starts-->
+	
+	
+	
+	
+	
+	 
+
+	
+	
+		
+	<div class="team" id="hello">
+		<div class="container">
+			<div class="team-top">
+				<h3>Articals</h3>
+				<p>曾就读中国文化大学哲学系。肄业曾留学欧洲，婚后定居西属撒哈拉沙漠加纳利岛，并以当地的生活为背景，写出一连串脍炙人口的作品。1981年回台后，曾在文化大学任教，1984年辞去教职，而以写作、演讲为重心。她的足迹遍及世界各地，她的作品也在全球的华人社会广为流传，在大陆也有广大的读者，生平著作和译作十分丰富，共有二十四种。 </p>
+			</div>	
+				<div class="team-bottom">
+					<div class="col-md-3 team-left">
+						<img src="images/team-1.png" alt=""/>
+						
+					</div>
+					<div class="col-md-3 team-left">
+						<img src="images/team-2.png" alt=""/>
+						
+					</div>
+					<div class="col-md-3 team-left">
+						<img src="images/team-3.png" alt=""/>
+						
+					</div>
+					<div class="col-md-3 team-left team-one">
+						<img src="images/team-4.png" alt=""/>
+						
+					</div>
+					<div class="clearfix"></div>
+				</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="product">
+		<div class="container">
+			<div class="product-main">
+			
+				<div class="product-top">
+					<div class="col-md-6 product-left">
+						<!--<span>Travel / 21st March, 2014</span>-->
+						<h4>《雨季不再来》 </h4>
+						<p>这本书是三毛17岁到22岁之间所发表的文稿的合辑，真实呈现出三毛少女时代的成长与感受。看过《撒哈拉的故事》，再回顾三毛在《雨季不再来》中透露的纯挚情怀和异质美感，可以清楚地印证她传奇般性格的痕迹</p>
+						<a href="https://www.amazon.cn/%E9%9B%A8%E5%AD%A3%E4%B8%8D%E5%86%8D%E6%9D%A5-%E4%B8%89%E6%AF%9B/dp/B005E7KRDE/ref=sr_1_4?s=books&ie=UTF8&qid=1494248717&sr=1-4&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					
+					<div class="col-md-6 product-right">		
+						<img src="images/雨季不再来.jpg" width="400" height="500" alt=""/>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				<div class="product-top">
+					<div class="col-md-6 product-right">
+						<img src="images/撒哈拉.jpg"  width="400" height="500" alt=""/>
+					</div>
+					
+					<div class="col-md-6 product-left">
+						<h4>《撒哈拉的故事》</h4>
+					<p>三毛作品中最脍炙人口当属《撒哈拉的故事》，《撒哈拉的故事》由十几篇精彩动人的散文结合而成，其中《沙漠中的饭店》，是三毛适应荒凉单调的沙漠生活后，重新拾笔的首篇文章，从此之后，三毛便写出一系列以沙漠为背景的故事，倾倒了全世界的华文读者</p>
+					<a href="https://www.amazon.cn/%E6%92%92%E5%93%88%E6%8B%89%E7%9A%84%E6%95%85%E4%BA%8B-%E4%B8%89%E6%AF%9B/dp/B005DRCQZ2/ref=sr_1_1?s=books&ie=UTF8&qid=1494248717&sr=1-1&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+		
+				<div class="product-top">
+					<div class="col-md-6 product-left">
+						<h4>《稻草人手记》 </h4>
+						<p>记录的是三毛定居加纳利岛后生活中的点点滴滴，语言朴实、简单，其中的情趣与无奈，朴实而谐趣，令人笑叹。也许，正是这样简简单单的生活，才给了三毛无限的创作灵感</p>
+					<a href="https://www.amazon.cn/%E4%B8%89%E6%AF%9B%E5%85%A8%E9%9B%8603-%E7%A8%BB%E8%8D%89%E4%BA%BA%E6%89%8B%E8%AE%B0-%E4%B8%89%E6%AF%9B/dp/B005G0M6H4/ref=sr_1_6?s=books&ie=UTF8&qid=1494248717&sr=1-6&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					<div class="col-md-6 product-right">
+						<img src="images/稻草人手记.jpg"   width="400" height="500"  alt=""/>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				
+				<div class="product-top">
+					<div class="col-md-6 product-right">
+						<img src="images/梦里花落知多少.jpg"  width="400" height="500" alt=""/>
+					</div>
+					<div class="col-md-6 product-left">
+						<h4>《梦里花落知多少》</h4>
+					<p>书中先是记录了三毛与荷西在撒哈拉沙漠结婚，白手成家的生活，而此时她的文学创作生涯也随之开启；后来移居加纳利群岛后，三毛的生活渐趋安定，她的创作也达到了很高的水平；再后来，荷西在一次潜水时意外去世，三毛的心灵受到巨大创伤，人生陷入低谷。一段时间后，三毛再度出走，游历中南美洲，开始新的生活。而这段经历，也使她的文风发生了一定的转变</p>
+					<a href="https://www.amazon.cn/%E6%A2%A6%E9%87%8C%E8%8A%B1%E8%90%BD%E7%9F%A5%E5%A4%9A%E5%B0%91-%E4%B8%89%E6%AF%9B/dp/B005DRCPVM/ref=sr_1_2?s=books&ie=UTF8&qid=1494248717&sr=1-2&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				
+				<class="product-top">
+					<div class="col-md-6 product-left">
+						<h4>《流星雨》 </h4>
+						<p>一是演讲，这部分，三毛讲述了她和荷西的相识、相知、相恋、结婚等故事。也有三毛的一些经历以及她的写作生活；二是采访，收录了李琼丝和夏木对三毛的专访</p>
+					 <a href="https://www.amazon.cn/%E4%B8%89%E6%AF%9B%E5%85%A8%E9%9B%86-%E6%B5%81%E6%98%9F%E9%9B%A8-%E4%B8%89%E6%AF%9B/dp/B005NMBZCM/ref=sr_1_15?s=books&ie=UTF8&qid=1494248717&sr=1-15&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					<div class="col-md-6 product-right">
+						<img src="images/流星雨.jpg"   width="400" height="500"  alt=""/>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				
+				<div class="product-top">
+					<div class="col-md-6 product-right">
+						<img src="images/万水千山走遍.jpg"  width="400" height="500" alt=""/>
+					</div>
+					<div class="col-md-6 product-left">
+						<h4>《万水千山走遍》</h4>
+						<p>记录了三毛返台后，再度出走，游历中南美洲以及首次回归故土的旅行见闻，共十八篇</p>
+						<a href="https://www.amazon.cn/%E4%B8%89%E6%AF%9B%E5%85%A8%E9%9B%8606-%E4%B8%87%E6%B0%B4%E5%8D%83%E5%B1%B1%E8%B5%B0%E9%81%8D-%E4%B8%89%E6%AF%9B/dp/B005G0M6E2/ref=sr_1_5?s=books&ie=UTF8&qid=1494248717&sr=1-5&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				
+				
+				<class="product-top">
+					<div class="col-md-6 product-left">
+					
+						<h4>《我的宝贝》</h4>
+						<p>三毛首先从它的“缘起”开始，作者介绍说她有许多的收藏，全是一些古老的东西，她说她的这些宝贝珍藏，每件背后都有一段故事，并把她的宝贝用照相机拍了下来，保存起来，后面的所有故事就是根据她看到的任意一张照片，然后写下的一篇篇故事，最后，因为某些原因，她把这些东西送给了别人。她的宝贝很多，每个宝贝后面都有一段珍贵的记忆，和那些可爱的人</p>
+					    <a href="https://www.amazon.cn/%E4%B8%89%E6%AF%9B%E5%85%A8%E9%9B%86-%E6%88%91%E7%9A%84%E5%AE%9D%E8%B4%9D-%E4%B8%89%E6%AF%9B/dp/B005O6506Y/ref=sr_1_12?s=books&ie=UTF8&qid=1494248717&sr=1-12&keywords=%E4%B8%89%E6%AF%9B">购买链接</a>
+					</div>
+					<div class="col-md-6 product-right">
+						<img src="images/我的宝贝.jpg"   width="400" height="500"  alt=""/>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	<!--tweets-ends-->
+	<!--footer-starts-->
+	<div class="footer" id="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="col-md-6 footer-left">
+					
+					<div class="col-md-4 footer-links">
+						<h4>LINKS</h4>
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Books</a></li>
+							
+						</ul>
+					</div>
+					<div class="col-md-4 footer-links">
+						<h4>WEBSITE</h4>
+						<ul>
+							<li><a href="https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/b/ref=sa_menu_top_books_l1?ie=UTF8&node=658390051">Amazon</a></li>
+							<li><a href="http://www.dangdang.com/?_utm_brand_id=11106&_ddclickunion=460-5-biaoti|ad_type=0|sys_id=1">Dangdang</a></li>
+							<li><a href="http://union.click.jd.com/sem.php?source=baidu-pinzhuan&unionId=288551095&siteId=baidupinzhuan_0f3d30c8dba7459bb52f2eb5eba8ac7d&to=http%3a%2f%2fwww.jd.com">JD.com</a></li>
+						</ul>
+					</div>
+					
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="footer-bottom">
+				
+				
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>	
+	</div>
+	<!--footer-ends-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="D:\Documents\网页设计与开发\secondhomework--02\1408080126 王晓蓉 作业（二）\build\three.js"></script>
+		<script src="D:\Documents\网页设计与开发\secondhomework--02\1408080126 王晓蓉 作业（二）\build\js\renderers\Projector.js"></script>
+		<script src="D:\Documents\网页设计与开发\secondhomework--02\1408080126 王晓蓉 作业（二）\build\js\renderers\CanvasRenderer.js"></script>
+		<script src="D:\Documents\网页设计与开发\secondhomework--02\1408080126 王晓蓉 作业（二）\build\js\libs\stats.min.js"></script>
+
+
+		<script>
+
+			var container, stats;
+			var camera, scene, renderer, group, particle;
+			var mouseX = 0, mouseY = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				//document.body.appendChild( container );
+			   document.getElementById("div1").appendChild( container );
+				
+
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 3000 );
+				camera.position.z = 1000;
+
+				scene = new THREE.Scene();
+
+				var PI2 = Math.PI * 2;
+				var program = function ( context ) {
+
+					context.beginPath();
+					context.arc( 0, 0, 0.5, 0, PI2, true );
+					context.fill();
+
+				};
+
+				group = new THREE.Group();
+				scene.add( group );
+
+				for ( var i = 0; i < 1000; i++ ) {
+
+					var material = new THREE.SpriteCanvasMaterial( {
+						color: Math.random() * 0x808008 + 0x808080,
+						program: program
+					} );
+
+					particle = new THREE.Sprite( material );
+					particle.position.x = Math.random() * 2000 - 1000;
+					particle.position.y = Math.random() * 2000 - 1000;
+					particle.position.z = Math.random() * 2000 - 1000;
+					particle.scale.x = particle.scale.y = Math.random() * 20 + 10;
+					group.add( particle );
+				}
+
+				renderer = new THREE.CanvasRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				stats = new Stats();
+				container.appendChild( stats.dom );
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			//
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+			}
+
+			function onDocumentTouchStart( event ) {
+
+				if ( event.touches.length === 1 ) {
+
+					event.preventDefault();
+
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+				}
+
+			}
+
+			function onDocumentTouchMove( event ) {
+
+				if ( event.touches.length === 1 ) {
+
+					event.preventDefault();
+
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+				}
+
+			}
+
+			//
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+				stats.update();
+
+			}
+
+			function render() {
+
+				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+				camera.lookAt( scene.position );
+
+				group.rotation.x += 0.01;
+				group.rotation.y += 0.02;
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+		
