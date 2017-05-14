@@ -78,6 +78,7 @@
             </div>
         </div>
     </div>
+	
 </header>
 
 <?php
@@ -94,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    } else {
      $name = test_input($_POST["name"]);   
    }
-}
+
 
    if (empty($_POST["email"])) {
      $emailErr = "电邮是必填的";
@@ -183,6 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  }
 		mysql_close ( $link );
    }
+}
 
 
 function test_input($data) {
