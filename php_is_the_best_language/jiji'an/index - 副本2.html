@@ -1,0 +1,371 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ik Bootstarp Website Template | About :: w3layouts</title>
+<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="./js/jquery-1.11.0.min.js"></script>
+<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Google Fonts --->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<!-- Google Fonts --->
+<script type="text/javascript" src="./js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+				});				
+			
+			},
+			
+			hoverEffect: function () {
+			
+				// Simple parallax effect
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+					}		
+				);				
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+	</script>
+	<script type="text/javascript" src="./js/easing.js"></script>
+					<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+</script>
+</head>
+<body>
+	<!--- Header Starts Here ---->
+	<div class="header" id="home">
+		<div class="container">
+			
+			<!--- banner Slider starts Here --->
+	  			<script src="./js/responsiveslides.min.js"></script>
+					 <script>
+					    // You can also use "$(window).load(function() {"
+					    $(function () {
+					      // Slideshow 4
+					      $("#slider4").responsiveSlides({
+					        auto: true,
+					        pager: true,
+					        nav: true,
+					        speed: 500,
+					        namespace: "callbacks",
+					        before: function () {
+					          $('.events').append("<li>before event fired.</li>");
+					        },
+					        after: function () {
+					          $('.events').append("<li>after event fired.</li>");
+					        }
+					      });
+					
+					    });
+					  </script>
+			<!----//End-slider-script---->
+			<!-- Slideshow 4 -->
+			    <div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider4">
+			        <li>
+			        	<div class="slide-content">
+							<h2>下面是信息展示页面</h2>
+							<p>在这里，会介绍小组成员，及他们做的东西</p>
+							
+						</div>
+					 </li>
+					 <li>
+			        	<div class="slide-content">
+							<h2>我们做了</h2>
+							<p>登录界面、信息页面、游戏板块和地图板块</p>
+							
+						</div>
+					 </li>
+					 <li>
+			        	<div class="slide-content">
+							<h2>我为什么要做这个</h2>
+							<p>因为我实在不知道自己该做啥</p>
+							
+						</div>
+					 </li>
+			      </ul>
+			    </div>
+		</div>
+	</div>
+	<!--- Header Ends Here ---->
+	<!-- Navigation Starts Here ---->
+	<!-- top-nav -->
+		
+		<div class="top-nav">
+			<nav>
+				<span class="menu"></span>
+				<ul>
+					<li><a href="#about" class="scroll">About Us</a></li>
+					<li class="active"><a href="#home" class="scroll">Home</a></li>
+					<li><a href="#work" class="scroll">Work</a></li>
+					<div class="clearfix"> </div>
+				</ul>
+			</nav>
+		</div>
+		<script>
+					$( "span.menu" ).click(function() {
+					  $( ".top-nav ul" ).slideToggle( "slow", function() {
+					    // Animation complete.
+					  });
+					});
+				</script>
+
+		<script src="./js/myscript.js"> </script>
+		<!-- top-nav -->
+	<!--- Navigarion Ends Here --->
+	<!--- About Us Starts Here ---->
+	<div class="about" id="about">
+		<div class="container">
+			<h3 class="top-title">About us</h3>
+			<p>   大家好，我们就是传说中的“php是世界上最难的语言”小组。下面是其他三位小组成员的介绍。</p>
+			<p class="show-not">        （不要问为什么没有我自己的，毕竟我没什么自己的照片）</p>
+			<div class="row about-row">
+				<div class="col-md-3 about-row-column">
+					<img src="./images/刘.jpg" alt=""/>
+				</div>
+				<div class="col-md-9 about-column">
+					<h3>刘树文</h3>
+					<h4>社会我组长</h4>
+					<p>“大家好，我是怪物史莱克·刘。看我头像牛逼不？”</p>
+					
+					<ul class="social">
+						<li><i class="fa"></i></li>
+						<li><i class="tw"></i></li>
+						<li><i class="in"></i></li>
+						<li><i class="pw"></i></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="row about-row">
+				<div class="col-md-9 about-column">
+					<h3>高祺开</h3>
+					<p>“每当我梳起我的长发，我的脸上都会漾起幸福的笑容。”</p>
+					
+					<ul class="social">
+						<li><i class="fa"></i></li>
+						<li><i class="tw"></i></li>
+						<li><i class="in"></i></li>
+						<li><i class="pw"></i></li>
+					</ul>
+				</div>
+				<div class="col-md-3 about-row-column">
+					<img src="./images/高.jpg" alt=""/>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="row about-row">
+				<div class="col-md-3 about-row-column">
+					<img src="./images/学姐.jpg" alt=""/>
+				</div>
+				<div class="col-md-9 about-column">
+					<h3>祝玉婷</h3>
+				
+					<p>“这张照片把我本人概括地很好。”</p>
+					
+					<ul class="social">
+						<li><i class="fa"></i></li>
+						<li><i class="tw"></i></li>
+						<li><i class="in"></i></li>
+						<li><i class="pw"></i></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+	<!--- Featured Work Starts Here ---->
+	<div class="feature" id="work">
+		<div class="container">			
+				<h3 class="top-title">成果介绍</h3>
+			
+					<div id="portfoliolist">
+					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/刘1.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">这是登录界面</p></div></a>
+		                </div>
+					</div>				
+					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog1" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/刘2.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">这是注册界面</p></div></a>
+		                </div>
+					</div>		
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog2" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/高1.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">这是游戏开头</p></div></a>
+		                </div>
+					</div>				
+					<div class="portfolio logo mix_all" data-cat="logo" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog3" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/高2.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">这是游戏界面</p></div></a>
+		                </div>
+					</div>	
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog4" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/高3.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">这是游戏结尾</p></div></a>
+		                </div>
+					</div>			
+					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog5" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/学姐1.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">分享后出现地图</p></div></a>
+		                </div>
+					</div>	
+					<div class="portfolio logo mix_all" data-cat="logo" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/学姐2.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">点击确定后的地图n></p></div></a>
+		                </div>
+					</div>	
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog7" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/冀1.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">信息页开头</p></div></a>
+		                </div>
+					</div>			
+					<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog8" class="b-link-stripe b-animate-go  thickbox popup-with-zoom-anim">
+						     <img src="./images/冀2.jpg" class="img-hid" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="./images/icon-eye.png" alt=""/></h2>
+						  	<p class="b-animate b-from-right    b-delay03 ">成员介绍</p></div></a>
+		                </div>
+					</div>
+				</div>
+				</div>
+				<div class="clearfix"></div>
+				<!---pop-up-box---->
+					  <script type="text/javascript" src="./js/modernizr.custom.min.js"></script>    
+					<link href="./css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+					<script src="./js/jquery.magnific-popup.js" type="text/javascript"></script>
+				<!---//pop-up-box---->
+					<div id="small-dialog" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/刘1.jpg" alt=""/>
+							<p>这是登录界面</p>
+						</div>
+					</div>
+					<div id="small-dialog1" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/刘2.jpg" alt=""/>
+							<p>这是注册界面</p>
+						</div>
+					</div>
+					<div id="small-dialog2" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/高1.jpg" alt=""/>
+							<p>这是游戏开头</p>
+						</div>
+					</div>
+					<div id="small-dialog3" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/高2.jpg" alt=""/>
+							<p>这是游戏界面</p>
+						</div>
+					</div>
+					<div id="small-dialog4" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/高3.jpg" alt=""/>
+							<p>这是游戏结尾</p>
+						</div>
+					</div>
+					<div id="small-dialog5" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/学姐1.jpg" alt=""/>
+							<p>分享后出现地图</p>
+						</div>
+					</div>
+					<div id="small-dialog6" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/学姐2.jpg" alt=""/>
+							<p>点击确定后的地图</p>
+						</div>
+					</div>
+					<div id="small-dialog7" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/冀1.jpg" alt=""/>
+							<p>信息页开头</p>
+						</div>
+					</div>
+					<div id="small-dialog8" class="mfp-hide">
+						<div class="image-top">
+							<img src="./images/冀2.jpg" alt=""/>
+							<p>成员介绍</p>
+						</div>
+					</div>
+		<script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>	
+	
+	
+				
+		
+		</div>
+	</div>
+	<!--- Featured Work Ends Here ---->
+	<div class="footer">
+	<p>
+				<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 2;"> </span></a>
+	</div>
+
+</body>
+</html>
