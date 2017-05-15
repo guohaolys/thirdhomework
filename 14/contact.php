@@ -260,8 +260,8 @@ function test_input($data) {
 		  echo "Error creating tables: " . mysql_error();
 		  }
 		  $history_records=mysql_query("SELECT * FROM visitor");
-		echo "<div id=\"history_records\">";
-		echo "<table id=\"history_records_table\" border='0' width='100%' align='center'>
+		echo "<div id=\"history_records\" style='background:#FFF'>";
+		echo "<table id=\"history_records_table\" border='0' width='100%'>
 		<tr>
 		<th><h4 align='center'>ID</h4></th>
 		<th><h4 align='center'>姓名</h4></th>
@@ -285,7 +285,7 @@ function test_input($data) {
 		  }
 		echo "</table>";
 		echo "</div>";
-		?>		
+		?>			
 </div>
 <script src="js/sharedfunctions.js" type="text/javascript" ></script>
 </br>
