@@ -66,6 +66,29 @@
 						});
 					});
 </script>
+<style>
+			a.footer:link,a:visited
+			{
+			float:center;
+			display:block;
+			font-weight:bold;
+			color:#FFFFFF;
+			background-color:#bebebe;
+			
+			padding:4px;
+			text-align:center;
+			text-decoration:none;
+			text-transform:uppercase;
+			}
+			a.footer:hover,a:active
+			{
+			background-color:#cc0000;
+			}
+			#footer
+			{
+			text-align:center;
+			}
+</style>
 </head>
 <body>
 	<!--- Header Starts Here ---->
@@ -153,8 +176,8 @@
 	<div class="about" id="about">
 		<div class="container">
 			<h3 class="top-title">About us</h3>
-			<p>   大家好，我们就是传说中的“php是世界上最难的语言”小组。下面是其他三位小组成员的介绍。</p>
-			<p class="show-not">        （不要问为什么没有我自己的，毕竟我没什么自己的照片）</p>
+			<p>   大家好，我们就是传说中的“php是世界上最难的语言”小组。下面是我们小组成员的介绍。</p>
+			<p class="show-not">        （在组长的强烈要求下，我只好换了他的照片）</p>
 			<div class="row about-row">
 				<div class="col-md-3 about-row-column">
 					<img src="./images/刘.jpg" alt=""/>
@@ -162,28 +185,17 @@
 				<div class="col-md-9 about-column">
 					<h3>刘树文</h3>
 					<h4>社会我组长</h4>
-					<p>“大家好，我是怪物史莱克·刘。看我头像牛逼不？”</p>
+					<p>“主要负责写登录+注册界面，用到html+css+php+mysql”</p>
 					
-					<ul class="social">
-						<li><i class="fa"></i></li>
-						<li><i class="tw"></i></li>
-						<li><i class="in"></i></li>
-						<li><i class="pw"></i></li>
-					</ul>
+					
 				</div>
 				<div class="clearfix"></div>
 			</div>
 			<div class="row about-row">
 				<div class="col-md-9 about-column">
 					<h3>高祺开</h3>
-					<p>“每当我梳起我的长发，我的脸上都会漾起幸福的笑容。”</p>
+					<p>“每当我梳起长发，我的脸上都会漾起幸福的笑容。”</p>
 					
-					<ul class="social">
-						<li><i class="fa"></i></li>
-						<li><i class="tw"></i></li>
-						<li><i class="in"></i></li>
-						<li><i class="pw"></i></li>
-					</ul>
 				</div>
 				<div class="col-md-3 about-row-column">
 					<img src="./images/高.jpg" alt=""/>
@@ -197,14 +209,22 @@
 				<div class="col-md-9 about-column">
 					<h3>祝玉婷</h3>
 				
-					<p>“这张照片把我本人概括地很好。”</p>
-					
-					<ul class="social">
-						<li><i class="fa"></i></li>
-						<li><i class="tw"></i></li>
-						<li><i class="in"></i></li>
-						<li><i class="pw"></i></li>
-					</ul>
+					<p>“这张照片把我本人概括地很好。”<br><br></p>
+					<p>将结果以地图形式展示，</p>
+					<p>辅助以生动的路径规划赛车动画，</p>
+					<p>突出地信专业的特点。</p>
+									
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="row about-row">
+				<div class="col-md-9 about-column">
+					<h3>冀际安</h3>
+					<p>“在这个世界上，敢放身份证照片的人不多，我算一个。”<br><br></p>
+					<p>我一直不能明确地定义我做了个啥，后来终于想清楚了：我做了个PPT。</p>
+				</div>
+				<div class="col-md-3 about-row-column">
+					<img src="./images/冀.jpg" alt=""/>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -362,9 +382,8 @@
 		</div>
 	</div>
 	<!--- Featured Work Ends Here ---->
-	<div class="footer">
-	<p>
-				<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 2;"> </span></a>
+	<div id="footer">
+		<a class="footer" href="../liushuwen/login.html"><h2>现在开始！</h2></a>
 	</div>
 
 </body>
