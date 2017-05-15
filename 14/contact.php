@@ -228,7 +228,7 @@ function test_input($data) {
         </div>
     </div>
 	
-<div class="container">
+<div class="container" >
        <h2 class="page-title text-center">history</h2>		
 		<?php
 		$link = mysql_connect ( 'localhost', 'root', '123' ) or die ( 'Could not connect: ' . mysql_error () );///////////////////////////////////////
@@ -261,34 +261,35 @@ function test_input($data) {
 		  }
 		  $history_records=mysql_query("SELECT * FROM visitor");
 		echo "<div id=\"history_records\">";
-		echo "<table id=\"history_records_table\" border='1'>
+		echo "<table id=\"history_records_table\" border='0' width='100%' align='center'>
 		<tr>
-		<th><h4>ID</h4></th>
-		<th>姓名</th>
-		<th>邮箱</th>
-		<th>评论</th>
-		<th>网址</th>
-		<th>性别</th>
+		<th><h4 align='center'>ID</h4></th>
+		<th><h4 align='center'>姓名</h4></th>
+		<th><h4 align='center'>性别</h4></th>
+		<th><h4 align='center'>邮箱</h4></th>
+		<th><h4 align='center'>评论</h4></th>
+		<th><h4 align='center'>网址</h4></th>
+		
 		</tr>";
 
 		while($row = mysql_fetch_array($history_records))
 		  {
 		  echo "<tr>";
-		  echo "<td>" . $row['id'] . "</td>";
-		  echo "<td>" . $row['name'] . "</td>";
-		  echo "<td>" . $row['email'] . "</td>";
-		  echo "<td>" . $row['comment'] . "</td>";
-		  echo "<td>" . $row['website'] . "</td>";
-		  echo "<td>" . $row['sex'] . "</td>";
+		  echo "<td><p align='center'>" . $row['id'] . "</p></td>";
+		  echo "<td><p align='center'>" . $row['name'] . "</p></td>";
+		  echo "<td><p align='center'>" . $row['sex'] . "</p></td>";
+		  echo "<td><p align='center'>" . $row['email'] . "</p></td>";
+		  echo "<td><p align='center'>" . $row['comment'] . "</p></td>";
+		  echo "<td><p align='center'>" . $row['website'] . "</p></td>";	 
 		  echo "</tr>";
 		  }
 		echo "</table>";
 		echo "</div>";
-		?>
-
+		?>		
 </div>
 <script src="js/sharedfunctions.js" type="text/javascript" ></script>
-	
+</br>
+</br>	
 </section>
 
 <!--Footer-->
