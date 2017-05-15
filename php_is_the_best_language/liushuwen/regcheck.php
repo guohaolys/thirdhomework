@@ -34,12 +34,13 @@
                     //$num_insert = mysql_num_rows($res_insert);  
                     if($res_insert)  
                     {  
-                        echo "<script>alert('注册成功！'); history.go(-1);</script>";  
+                        echo "<script>alert('注册成功！'); location.href='login.html';</script>"; 
                     }  
                     else  
                     {  
                         echo "<script>alert('系统繁忙，请稍候！'); history.go(-1);</script>";  
                     }  
+					
                 }  
             }  
             else  
