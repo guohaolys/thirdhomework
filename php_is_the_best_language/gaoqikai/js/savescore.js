@@ -1,8 +1,10 @@
 /**
  * Created by ChuckGao on 2017/4/27.
  */
+
 //保存分数
 function saveScore(score){
+    SetCookie('score',score);
     xmlHttp=GetXmlHttpObject();
     if (xmlHttp==null){
         alert ("Browser does not support HTTP Request");
