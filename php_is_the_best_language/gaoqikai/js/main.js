@@ -186,6 +186,7 @@ function startGame() {
     loadSoundFile(handleSoundLoad);
 }
 function enterGame() {
+    SetCookie('sfsdfsd','88');
     gameState = STATE.PLAY;
     stage.removeChild(stage.getChildByName("start"));
     step = 0;

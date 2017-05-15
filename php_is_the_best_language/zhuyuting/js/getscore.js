@@ -1,27 +1,29 @@
 /**
- * Created by ChuckGao on 2017/4/27.
+ * Created by ChuckGao on 2017/5/15.
  */
 
 //保存分数
-function saveScore(score){
-    console.log("aaaaa");
+function getscore(){
+
     xmlHttp=GetXmlHttpObject();
     if (xmlHttp==null){
         alert ("Browser does not support HTTP Request");
         return;
     }
-    var url="php/savescore.php";
-    url=url+"?score="+ score;
+    var url="getscore.php";
     xmlHttp.onreadystatechange=stateAjaxChanged;
     xmlHttp.open("GET",url,true);
     xmlHttp.send(null);
+
 }
 //ajax状态
 function stateAjaxChanged()
 {
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
     {
-        document.getElementById("txtHint").innerHTML=xmlHttp.responseText;
+
+       var a = xmlHttp.response;
+       alert("分享成功， 您的分数是：" + a );
     }
 }
 //根据浏览器获取ajax
