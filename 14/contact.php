@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      @$comment = test_input($_POST["comment"]);
      @$gender = test_input($_POST["gender"]);
    
- 		$link = mysql_connect ( 'localhost', 'root', '123' ) or die ( 'Could not connect: ' . mysql_error () );
+ 		$link = mysql_connect ( 'localhost', 'root', 'guohao' ) or die ( 'Could not connect: ' . mysql_error () );
 		if (mysql_query("CREATE DATABASE IF NOT EXISTS contact CHARACTER SET utf8 COLLATE utf8_general_ci",$link))
 		  {
 			  //echo"Create database contact successed!";
@@ -231,7 +231,7 @@ function test_input($data) {
 <div class="container" >
        <h2 class="page-title text-center">history</h2>		
 		<?php
-		$link = mysql_connect ( 'localhost', 'root', '123' ) or die ( 'Could not connect: ' . mysql_error () );///////////////////////////////////////
+		$link = mysql_connect ( 'localhost', 'root', 'guohao' ) or die ( 'Could not connect: ' . mysql_error () );///////////////////////////////////////
 		//echo 'Connected successfully';
 		if (mysql_query("CREATE DATABASE IF NOT EXISTS contact CHARACTER SET utf8 COLLATE utf8_general_ci",$link))
 		  {
