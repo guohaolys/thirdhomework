@@ -1,0 +1,31 @@
+
+body{
+	argin:0;
+	border:0;
+	padding:0;
+	background: rgba(4, 5, 9, 0.51);
+}
+#playGround{
+	position:relative;
+	margin:0px auto;
+	width:480px;
+	height: 800px;
+}
+#bg{
+	position: absolute;
+	left:0;
+	z-index: 0;
+	width:480px;
+	height: 800px;
+}
+#myCanvas{
+	position: absolute;
+	left:0;
+	z-index: 10;
+	margin:0px auto;
+	width:480px;
+	height: 800px;
+	border:1px solid rgba(2, 6, 23, 0.66);
+}
+
+

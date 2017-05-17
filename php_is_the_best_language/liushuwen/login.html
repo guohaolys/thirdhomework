@@ -1,0 +1,65 @@
+﻿<?php session_start(); ?>
+<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>登录(Login)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/supersized.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+
+    </head>
+
+    <body>
+		<script type="text/javascript" color="255,0,0" opacity='0.7' Index="-2" count="200" src="src/canvas-nest.js"></script>
+		<script type="text/javascript">
+			function async_load() {
+				//async load github
+				var i = document.createElement("iframe");
+				i.src = "https://ghbtns.com/github-btn.html?user=hustcc&repo=canvas-nest.js&type=star&count=true";
+				i.scrolling = "no";
+				i.frameborder = "0";
+				i.border = "0";
+				i.setAttribute("frameborder", "0", 0);
+				i.width = "100px";
+				i.height = "20px";
+				document.getElementById("github_iframe").appendChild(i);
+			}
+
+			if (window.addEventListener) {window.addEventListener("load", async_load, false);}
+			else if (window.attachEvent) {window.attachEvent("onload", async_load);}
+			else {window.onload = async_load;}
+		</script>
+		
+        <div class="page-container">
+            <h1>登录(Login)</h1>
+            <form action="logincheck.php" method="post">
+                <input type="text" name="username"  placeholder="请输入您的用户名！">
+                <input type="password" name="password"  placeholder="请输入您的用户密码！"> 
+				<input type="submit" name="submit" value="登录" />  
+				<p><br /><br /></p>
+				还未注册，现在<a href="register.html">注册</a>
+            </form>
+
+        </div>
+		
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js" ></script>
+        <script src="assets/js/supersized.3.2.7.min.js" ></script>
+        <script src="assets/js/supersized-init.js" ></script>
+        <script src="assets/js/scripts.js" ></script>
+
+    </body>
+<div style="text-align:center;">
+</div>
+</html>
+
